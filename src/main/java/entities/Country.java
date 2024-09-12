@@ -30,5 +30,5 @@ public class Country {
     private Date last_update;
 
     @OneToMany(mappedBy = "country", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Division> divisions
+    private Set<Division> divisions;
 }
