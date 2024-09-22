@@ -35,7 +35,7 @@ public class CheckoutServiceImpl implements CheckoutService{
         Set<CartItem> cartItems = purchase.getCartItems();
         cartItems.forEach(cart::add);
 
-        cart.setStatus(StatusType.ordered);
+        cart.setStatus(StatusType.ORDERED);
 
         Customer customer = purchase.getCustomer();
         customer.add(cart);

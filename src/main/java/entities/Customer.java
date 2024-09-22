@@ -61,18 +61,18 @@ public class Customer {
     private Date last_update;
 
     @ManyToOne
-    @JoinColumn(name = "division_id")
+    @JoinColumn(name = "division_id",nullable = false)
     private Division division;
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Cart> Carts;
+    private Set<Cart> carts;
 
     public void add(Cart cart) {
         if (cart != null) {
-            if (Carts == null) {
-                Carts = new HashSet<>();
+            if (carts == null) {
+                carts = new HashSet<>();
             }
-            Carts.add(cart);
+            carts.add(cart);
             cart.setCustomer(this);
         }
     }

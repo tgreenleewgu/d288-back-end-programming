@@ -39,8 +39,8 @@ public class Excursion {
     @Column(name = "last_update")
     private Date last_update;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "vacation_id")
+    @ManyToOne
+    @JoinColumn(name = "vacation_id" ,nullable = false)
     private Vacation vacation;
 
     @ManyToMany(mappedBy = "excursions")

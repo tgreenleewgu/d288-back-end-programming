@@ -42,7 +42,7 @@ public class Cart {
     private Date last_update;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id")
+    @JoinColumn(name = "customer_id",nullable = false)
     private Customer customer;
 
     @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -50,5 +50,7 @@ public class Cart {
 
     public void add(CartItem cartItem) {
         this.cartItem.add(cartItem);
+        cartItem.setCart(this);
+
     }
 }
