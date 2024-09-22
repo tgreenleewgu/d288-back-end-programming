@@ -1,11 +1,14 @@
 package entities;
 
+
+//import jakarta.validation.constraints.*;
+
 import jakarta.persistence.*;
-//import jakarta.validation.constraints.NotBlank;
-//import jakarta.validation.constraints.Size;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+
 import org.hibernate.annotations.UpdateTimestamp;
+
 
 import java.util.Date;
 import java.util.HashSet;
@@ -62,16 +65,34 @@ public class Customer {
     private Division division;
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Cart> carts;
+    private Set<Cart> Carts;
 
     public void add(Cart cart) {
         if (cart != null) {
-            if (carts == null) {
-                carts = new HashSet<>();
+            if (Carts == null) {
+                Carts = new HashSet<>();
             }
-            carts.add(cart);
+            Carts.add(cart);
             cart.setCustomer(this);
         }
+    }
+
+
+    public Customer(String firstName, String lastName, String address, String postal_code, String phone, Long division_id) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.postal_code = postal_code;
+        this.phone = phone;
+        this.division = setDivision(division_id);
+    }
+
+    public Division setDivision(Long id) {
+
+        Division division = new Division();
+        division.setId(id);
+
+        return division;
     }
 }
 

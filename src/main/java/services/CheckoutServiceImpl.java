@@ -1,8 +1,8 @@
 package services;
 
-import dao.CartItemRepository;
+//import dao.CartItemRepository;
 import dao.CartRepository;
-import dao.CustomerRepository;
+//import dao.CustomerRepository;
 import entities.Cart;
 import entities.CartItem;
 import entities.Customer;
