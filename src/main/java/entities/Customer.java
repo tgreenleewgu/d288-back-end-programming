@@ -1,7 +1,7 @@
 package entities;
 
 
-//import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.*;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -30,25 +30,25 @@ public class Customer {
     @Column(name = "customer_id")
     private Long id;
 
-    //@NotBlank(message = "First name is mandatory")
+    @NotBlank(message = "First name is mandatory")
     @NonNull
     @Column(name = "customer_first_name")
     private String firstName;
 
-    //@NotBlank(message = "Last name is mandatory")
+    @NotBlank(message = "Last name is mandatory")
     @Column(name = "customer_last_name")
     private String lastName;
 
-    //@NotBlank(message = "Address is mandatory")
+    @NotBlank(message = "Address is mandatory")
     @Column(name = "address")
     private String address;
 
-    //@NotBlank(message = "Postal code is mandatory")
-    //@Size(min = 5, max = 10, message = "Postal code must be between 5 and 10 characters")
+    @NotBlank(message = "Postal code is mandatory")
+    @Size(min = 5, max = 10, message = "Postal code must be between 5 and 10 characters")
     @Column(name = "postal_code")
     private String postal_code;
 
-    //@NotBlank(message = "Phone number is mandatory")
+    @NotBlank(message = "Phone number is mandatory")
     @Column(name = "phone")
     private String phone;
 
