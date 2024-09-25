@@ -14,7 +14,7 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
+
 public class Division {
 
     @Id
@@ -40,13 +40,13 @@ public class Division {
     @Column(name = "country_id", insertable = false, updatable = false)
     private Long country_id;
 
-    @OneToMany(mappedBy = "division", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Customer> customers;
+//    @OneToMany(mappedBy = "division", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    private Set<Customer> customers;
 
 
-    public void setCountry(Country country){
-        setCountry_id(country.getId());
-        this.country = country;
-    }
+//    public void setCountry(Country country){
+//        setCountry_id(country.getId());
+//        this.country = country;
+//    }
 
 }

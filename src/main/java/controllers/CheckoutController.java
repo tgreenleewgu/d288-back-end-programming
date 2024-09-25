@@ -6,7 +6,7 @@ import services.CheckoutService;
 import services.Purchase;
 import services.PurchaseResponse;
 
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin
 @RestController
 @RequestMapping("/api/checkout")
 public class CheckoutController {

@@ -27,11 +27,11 @@ public class Vacation {
     private String description;
 
     @Column(name = "travel_fare_price")
-    @JsonProperty("travel_price")
+//    @JsonProperty("travel_price")
     private BigDecimal travel_price;
 
     @Column(name = "image_url")
-    @JsonProperty("image_URL")
+//    @JsonProperty("image_URL")
     private String image_URL;
 
     @CreationTimestamp

@@ -21,14 +21,14 @@ public class Excursion {
     private Long id;
 
     @Column(name = "excursion_title")
-    @JsonProperty("excursion_title")
+//    @JsonProperty("excursion_title")
     private String excursion_title;
 
     @Column(name = "excursion_price")
     private BigDecimal excursion_price;
 
     @Column(name = "image_url")
-    @JsonProperty("image_URL")
+//    @JsonProperty("image_URL")
     private String image_URL;
 
     @CreationTimestamp
