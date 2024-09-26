@@ -1,8 +1,8 @@
-package services;
+package com.d288.bookings.services;
 
-import entities.Cart;
-import entities.CartItem;
-import entities.Customer;
+import com.d288.bookings.entities.Cart;
+import com.d288.bookings.entities.CartItem;
+import com.d288.bookings.entities.Customer;
 import lombok.*;
 
 

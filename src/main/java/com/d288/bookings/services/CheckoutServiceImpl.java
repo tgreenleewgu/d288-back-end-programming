@@ -1,12 +1,11 @@
-package services;
+package com.d288.bookings.services;
 
 //import dao.CartItemRepository;
-import dao.CartRepository;
+import com.d288.bookings.dao.CartRepository;
 //import dao.CustomerRepository;
-import entities.Cart;
-import entities.CartItem;
-import entities.Customer;
-import entities.StatusType;
+import com.d288.bookings.entities.Cart;
+import com.d288.bookings.entities.CartItem;
+import com.d288.bookings.entities.StatusType;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

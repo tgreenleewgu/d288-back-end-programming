@@ -1,6 +1,6 @@
-package dao;
+package com.d288.bookings.dao;
 
-import entities.Country;
+import com.d288.bookings.entities.Country;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.web.bind.annotation.CrossOrigin;

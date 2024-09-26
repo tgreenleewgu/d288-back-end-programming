@@ -1,4 +1,4 @@
-package entities;
+package com.d288.bookings.entities;
 
 
 //import jakarta.validation.constraints.*;
@@ -11,9 +11,6 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
-
 
 
 @Getter

@@ -1,4 +1,4 @@
-package entities;
+package com.d288.bookings.entities;
 
 //import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;

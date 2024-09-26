@@ -1,6 +1,6 @@
-package config;
+package com.d288.bookings.config;
 
-import entities.*;
+import com.d288.bookings.entities.*;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;

@@ -1,4 +1,4 @@
-package services;
+package com.d288.bookings.services;
 
 import lombok.Data;
 import lombok.NonNull;

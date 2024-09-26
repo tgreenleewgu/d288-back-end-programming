@@ -1,4 +1,4 @@
-package entities;
+package com.d288.bookings.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
