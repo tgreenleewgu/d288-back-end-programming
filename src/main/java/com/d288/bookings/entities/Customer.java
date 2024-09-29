@@ -11,6 +11,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Getter
@@ -58,9 +60,15 @@ public class Customer {
     private Date last_update;
 
     @ManyToOne
-    @JoinColumn(name = "division_id",nullable = false)
+    @JoinColumn(name = "division_id", nullable = false)
     private Division division;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
+    private Set<Cart> carts = new HashSet<>();
+
+    public void add(Cart cart) {
+        carts.add(cart);
+//
 //    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 //    private Set<Cart> carts;
 
@@ -75,14 +83,15 @@ public class Customer {
 //    }
 
 
-    public Customer(String firstName, String lastName, String address, String postal_code, String phone, Division division_id) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.postal_code = postal_code;
-        this.phone = phone;
-        this.division = division_id;
-    }
+//        public Customer(String firstName, String lastName, String address, String postal_code, String phone, Division division_id)
+//        {
+//            this.firstName = firstName;
+//            this.lastName = lastName;
+//            this.address = address;
+//            this.postal_code = postal_code;
+//            this.phone = phone;
+//            this.division = division_id;
+//        }
 
 //    public Division setDivision(Long id) {
 //
@@ -91,5 +100,6 @@ public class Customer {
 //
 //        return division;
 //    }
+    }
 }
 

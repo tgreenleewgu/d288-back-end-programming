@@ -7,6 +7,9 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
 
 @Entity
 @Table(name="divisions")
@@ -17,7 +20,7 @@ import java.util.Date;
 public class Division {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "division_id")
     private Long id;
 
@@ -33,7 +36,7 @@ public class Division {
     private Date last_update;
 
     @ManyToOne
-    @JoinColumn(name = "country_id",nullable = false, insertable = false)
+    @JoinColumn(name = "country_id", nullable = false, insertable = false)
     private Country country;
 
     @Column(name = "country_id", insertable = false, updatable = false)
@@ -48,4 +51,11 @@ public class Division {
 //        this.country = country;
 //    }
 
+    public void setCountry(Country country) {
+        setCountry_id(country.getId());
+        this.country = country;
+    }
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "division")
+    private Set<Customer> customers = new HashSet<>();
 }
