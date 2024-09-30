@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 
-@CrossOrigin
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/checkout")
 public class CheckoutController {
@@ -15,6 +15,7 @@ public class CheckoutController {
     private CheckoutService checkoutService;
     @Autowired
     public CheckoutController(CheckoutService checkoutService) {
+
         this.checkoutService = checkoutService;
     }
 

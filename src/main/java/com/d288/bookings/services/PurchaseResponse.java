@@ -1,12 +1,10 @@
 package com.d288.bookings.services;
 
-import lombok.Data;
-import lombok.NonNull;
+import lombok.*;
 
 @Data
 public class PurchaseResponse {
-    @NonNull
-    private String orderTrackingNumber;
+    private final String orderTrackingNumber;
 
 //    public PurchaseResponse(String orderTrackingNumber) {
 //

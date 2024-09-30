@@ -8,8 +8,7 @@ import lombok.*;
 
 import java.util.Set;
 
-@Getter
-@Setter
+@Data
 public class Purchase {
     private Customer customer;
     private Cart cart;

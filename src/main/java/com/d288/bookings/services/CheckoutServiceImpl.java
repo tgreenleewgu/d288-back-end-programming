@@ -1,12 +1,14 @@
 package com.d288.bookings.services;
 
-//import dao.CartItemRepository;
+
 import com.d288.bookings.dao.CartRepository;
-//import dao.CustomerRepository;
+import com.d288.bookings.dao.CustomerRepository;
 import com.d288.bookings.entities.Cart;
 import com.d288.bookings.entities.CartItem;
+import com.d288.bookings.entities.Customer;
 import com.d288.bookings.entities.StatusType;
 import jakarta.transaction.Transactional;
+import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,12 +16,15 @@ import java.util.Set;
 import java.util.UUID;
 
 @Service
-public class CheckoutServiceImpl implements CheckoutService{
+public class CheckoutServiceImpl implements CheckoutService {
+
+//    private final CustomerRepository customerRepository;
     private final CartRepository cartRepository;
+
     @Autowired
-    public CheckoutServiceImpl(CartRepository cartRepository)
-    {
+    public CheckoutServiceImpl(CartRepository cartRepository) {
         this.cartRepository = cartRepository;
+//        this.customerRepository = customerRepository;
     }
 
     @Override
@@ -27,16 +32,22 @@ public class CheckoutServiceImpl implements CheckoutService{
     public PurchaseResponse placeOrder(Purchase purchase) {
 
         Cart cart = purchase.getCart();
-
-        String orderTrackingNumber = generateOrderTrackingNumber();
-        cart.setOrderTrackingNumber(orderTrackingNumber);
-
+//        Customer customer = purchase.getCustomer();
         Set<CartItem> cartItems = purchase.getCartItems();
-        //cartItems.forEach(cart::add);
         cartItems.forEach(item -> cart.add(item));
+        String orderTrackingNumber = generateOrderTrackingNumber();
 
-        cart.setStatus(StatusType.ORDERED);
+//        cartItems.forEach(item -> {
+//            item.setCart(cart);
+//            cart.add(item);
+//        });
+
+        cart.setOrderTrackingNumber(orderTrackingNumber);
+        cart.setStatus(StatusType.ordered);
+//        customer.add(cart);
+
         cartRepository.save(cart);
+//        customerRepository.save(customer);
 
         return new PurchaseResponse(orderTrackingNumber);
     }
@@ -46,5 +57,4 @@ public class CheckoutServiceImpl implements CheckoutService{
         return UUID.randomUUID().toString();
 
     }
-
 }
