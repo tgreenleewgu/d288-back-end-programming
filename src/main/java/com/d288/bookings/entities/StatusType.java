@@ -1,6 +1,6 @@
 package com.d288.bookings.entities;
 
 public enum StatusType {
-    pending, ordered,CANCELLED
+    pending, ordered, cancelled
 }
 
